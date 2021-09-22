@@ -1,7 +1,4 @@
 {
- "type":  "Microsoft.Authorization/policyDefinitions",
- "apiVersion":  "2020-09-01",
- "name":  "4D3CF186A40A7C2C481B645A540C1C7C",
  "properties": {
   "displayName": "Azure Diagnostics Policy Initiative for a Log Analytics EventHub and AzDefender",
   "policyType": "Custom",
