@@ -1,4 +1,14 @@
 {
+    "$schema":  "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion":  "1.0.0.0",
+    "parameters":  {
+
+                   },
+    "resources":  [
+{
+ "type":  "Microsoft.Authorization/policyDefinitions",
+ "apiVersion":  "2020-09-01",
+ "name":  "4D3CF186A40A7C2C481B645A540C1C7C",
  "properties": {
   "displayName": "Azure Diagnostics Policy Initiative for a Log Analytics EventHub and AzDefender",
   "policyType": "Custom",
@@ -2447,4 +2457,6 @@
  "id": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policySetDefinitions/24e472fd8b0242ae947fa07e",
  "type": "Microsoft.Authorization/policySetDefinitions",
  "name": "24e472fd8b0242ae947fa07e"
+}
+]
 }
