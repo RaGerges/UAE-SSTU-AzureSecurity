@@ -59,15 +59,13 @@
     "type": "string",
     "metadata": {
      "displayName": "EventHub Name"
-    },
-    "defaultValue": "Name"
+    }
    },
    "EventHubRuleID": {
     "type": "string",
     "metadata": {
      "displayName": "EventHubRuleID"
-    },
-    "defaultValue": "ID"
+    }
    },
    "Allowed Locations": {
     "type": "array",
