@@ -1,0 +1,2457 @@
+{
+ "properties": {
+  "displayName": "Azure Diagnostics Policy Initiative for a Log Analytics EventHub and AzDefender",
+  "policyType": "Custom",
+  "description": "This initiative configures application Azure resources to forward diagnostic logs and metrics to an Azure Diagnostics sink point.",
+  "metadata": {
+   "category": "Monitoring",
+   "createdBy": "8ef8194d-db4b-49e2-b0b4-cafd61a4a5f8",
+   "createdOn": "2021-09-22T17:29:01.5717348Z",
+   "updatedBy": null,
+   "updatedOn": null,
+   "parameterScopes": {
+    "eventHubName": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1",
+    "eventHubRuleId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1",
+    "azureRegions": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1"
+   },
+   "gitHubPolicy": {
+    "digest": "4186dc810fa85464fa513e693316729c11cc1288",
+    "repoName": "RaGerges/UAE-SSTU-AzureSecurity",
+    "commitSha": "57c6a47ee98ce5f9b012c00c6e7a7632bc501c90",
+    "runUrl": "https://github.com/RaGerges/UAE-SSTU-AzureSecurity/actions/runs/1262818971",
+    "filepath": "AzPolicy/initiatives/Azure_Diagnostics_Policy_Initiative_for_a_Log_Analytics_EventHub_and_AzDefender_24e472fd8b0242ae947fa07e"
+   }
+  },
+  "parameters": {
+   "profileName": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Profile Name for Config",
+     "description": "The profile name Azure Diagnostics"
+    }
+   },
+   "logAnalytics": {
+    "type": "string",
+    "metadata": {
+     "displayName": "logAnalytics",
+     "description": "The target Log Analytics Workspace for Azure Diagnostics",
+     "strongType": "omsWorkspace"
+    }
+   },
+   "metricsEnabled": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Enable Metrics",
+     "description": "Enable Metrics - True or False"
+    },
+    "allowedValues": [
+     "True",
+     "False"
+    ],
+    "defaultValue": "False"
+   },
+   "logsEnabled": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Enable Logs",
+     "description": "Enable Logs - True or False"
+    },
+    "allowedValues": [
+     "True",
+     "False"
+    ],
+    "defaultValue": "True"
+   },
+   "EventHub Name": {
+    "type": "string",
+    "metadata": {
+     "displayName": "EventHub Name"
+    }
+   },
+   "EventHubRuleID": {
+    "type": "string",
+    "metadata": {
+     "displayName": "EventHubRuleID"
+    }
+   },
+   "Allowed Locations": {
+    "type": "array",
+    "metadata": {
+     "displayName": "Allowed Locations"
+    },
+    "defaultValue": []
+   }
+  },
+  "policyDefinitions": [
+   {
+    "policyDefinitionReferenceId": "1954208102197916285",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/4D3CF186A40A7C2C481B645A540C1C7C",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "2738247473050582379",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/103941B66EFD5882F03DEBBC8AC4C9A8",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "14480340342966165873",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/EB9FBE4CFA30BC2439C7E5A99AB717D2",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "10073563092314493195",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/A3CC5920C945B6FA604AA3036641F405",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "17537099008692272879",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/0D32F82FC3AB649805888236FD965BE8",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "4742122113087027867",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/05EE701865C5EF359979ED0C591C8928",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "10021058185125820677",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/94276E642A781F83294D565F6AE1B316",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "13495912585221432373",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/93DFF553BBAC1E2370C0097029629386",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "17364185093968910518",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/7C3F20146D31464A442983B47A024427",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "12796686804154965809",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/0231FCA785ED25776C9924503CF8B1EB",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "18213637612841264271",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/ABFDA0EAB2FE77ED503037D276B6294E",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "4257789910107742302",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/4BCBC4B11E519ABC073BE7D56FF4B85A",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "3826474019961120641",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/69236DBA82C8CBFBD4F0FA62344CCA83",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "15453215497960080957",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/D3F2573A808FAB2688DEEFF4D6BE05BB",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "6498881658934559792",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/3FFDC8504B8DFC245770B9DEDB86C6BF",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "5101339113829439702",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/C2E942DD7954DEB73491254DFA3FCB80",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "18364549877953448038",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/D3DFEED3AD9A826F328426E7F0A6CB70",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "9702497408110215090",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/8B04F1F215D5193FAE02C592D02D16EF",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "7953985680393325605",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/204F3D038AD9D98BBF748C311CDBC999",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "5149809004056020335",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/4D980DA79045A0BE32C90527CA138577",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "14806405950464223700",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/D61A0A3FA7E49D7A82FE7111E490F7D5",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "3724588354055595105",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/B050B0D4C3CDCE1D4AC66D392DF6B7CC",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "12141318063495424276",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/E84B8271527313D90DC8E190C39FF74B",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "17756680423171732284",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/8890AE412F202CCF655810D9F8BA4F7D",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "6872721650903996070",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/51198AD7A860AEE57FD3A1FA913A2D9A",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "7054034117769877685",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/CDF72FE7F481BFCD222134FE2B91057C",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "5263937868135913009",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/D6C87A1B6C9E0A0DD913D3FA8DE904F9",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "5087387991175128778",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/4ED3AE4C775BE4A6C963645E6097394E",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "4955672079138665931",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/398D805E4F5EA41D104171CA3EE84F36",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "9789335182697264906",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/70E3CC3B14B51DC94F1CDE32A75BF775",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "7632133624511859253",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/E4201F4322F1AF683A59A592530DB182",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "13144869882911974388",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/27ED7449769BEA5D4A1A8FC5DBCAEC4D",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "10715286476931328839",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/C13ED092AC2619F97F9A32FF0D84CA52",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "6957327160037867499",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/89C6B83078C6B35E12B95D98DDF87E26",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "7005178123005730911",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/AB571C9159E882B375133104C2473E7C",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "8748954895444808190",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/6DD55B5BA0B83E32FD3495B24FF3644E",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "16325156168314041366",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/C63EB710BA00A1E79E317C8BC8EBB33B",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "15371002032351212771",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/ED92600EAB433BA466B40C12A2931A13",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "7186518320422659231",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/24F7FF9F89285F5E8A9D3D265C626B47",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "10485308160312113925",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/E52185E6FFDAABDB585CE5195AA711FE",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "3687884544681503426",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/BF94DF2ABC1EFF4F6C6BA0044049549A",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "15845995559023799043",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/9456090CCC9873CA052159C151F35235",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "6576661412200103368",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/CE2A38D82B02FFA396B1D72D1E5B273A",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "7328243916623963054",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/6663C6D3F8EEAB4DEA59D4811926CE36",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "14616057551154613778",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/C89F5030DC8C4DD0F88D3B6C629D897A",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "11000110755023871783",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/C450F6AA3432D07E7993607C6AAA7709",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "3388827546444225491",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/9DA5EFBFE63BBAC0C09142D9B5FFDFC3",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "5881739476228021358",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/94FB31BE7BBEC0498233D547B7C7BBE8",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "5002082210037535134",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/EF4E93BE2778EFAA77F8D681C688C8AD",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "10378092675529991795",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/9B3C30C162A45B1B9DEC46B9F3FC2C69",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "7288087808618140829",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/DF5C522C279F1C952CF677C12C7B4BC2",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "10392952665594658850",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/F4CDF014134DB67AB07D50BC43A70322",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "5257537424945114113",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/3AA846351E0444978D8C682226F640FD",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "12229711867229794073",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/21F57A48443C0A60112B8A2C96ED1E5D",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "logAnalytics": {
+      "value": "[parameters('logAnalytics')]"
+     },
+     "metricsEnabled": {
+      "value": "[parameters('metricsEnabled')]"
+     },
+     "logsEnabled": {
+      "value": "[parameters('logsEnabled')]"
+     }
+    },
+    "groupNames": [
+     "Log Analytics"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Azure Defender for open-source relational databases should be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/0a9fbe0d-c5c4-4da8-87d8-f4fd77338835",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Azure Defender for Key Vault should be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/0e6763cc-5078-4e64-889d-ff4d9a839047",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Configure Azure Defender for Kubernetes to be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/133047bf-1369-41e3-a3be-74a11ed1395a",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Configure Azure Defender for Key Vaults to be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1f725891-01c0-420a-9059-4fa46cb770b7",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Azure Defender for open-source relational databases should be enabled_2",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/0a9fbe0d-c5c4-4da8-87d8-f4fd77338835",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Azure Defender for Key Vault should be enabled_2",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/0e6763cc-5078-4e64-889d-ff4d9a839047",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Configure Azure Defender for Kubernetes to be enabled_2",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/133047bf-1369-41e3-a3be-74a11ed1395a",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Configure Azure Defender for Key Vaults to be enabled_2",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1f725891-01c0-420a-9059-4fa46cb770b7",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Configure Azure Defender for DNS to be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/2370a3c1-4a25-4283-a91a-c9c1a145fb2f",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Azure Defender for App Service should be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/2913021d-f2fd-4f3d-b958-22354e2bdbcb",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "[Preview]: Configure Azure Defender for SQL agent on virtual machine_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/2ada9901-073c-444a-9a9a-91865174f0aa",
+    "parameters": {
+     "azureDefenderForSqlExtensionTypeToInstall": {
+      "value": "AdvancedThreatProtection.Windows"
+     }
+    },
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Azure Defender for Storage should be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/308fbb08-4ab8-4e67-9b29-592e93fb94fa",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Configure Azure Defender to be enabled on SQL servers_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/36d49e87-48c4-4f2e-beed-ba4ed02b71f5",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Azure Defender for servers should be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/4da35fc9-c9e7-4960-aec9-797fe7d9051d",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Configure Azure Defender for SQL servers on machines to be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/50ea7265-7d8c-429e-9a7d-ca1f410191c3",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Azure Defender for Kubernetes should be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/523b5cd1-3e23-492f-a539-13118b6d1e3a",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "[Preview]: Configure Azure Kubernetes Service clusters to enable Azure Defender profile_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/64def556-fbad-4622-930e-72d1d5589bf5",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Azure Defender for SQL servers on machines should be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6581d072-105e-4418-827f-bd446d56421b",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "[Preview]: Configure Azure Arc enabled Kubernetes clusters to install Azure Defender's extension_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/708b60a6-d253-4fe0-9114-4be4c00f012c",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Configure Azure Defender for Storage to be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/74c30959-af11-47b3-9ed2-a26e03f427a3",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Azure Defender for Azure SQL Database servers should be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/7fe3b40f-802b-4cdd-8bd4-fd799c948cc2",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "[Preview]: Azure Arc enabled Kubernetes clusters should have Azure Defender's extension installed_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/8dfab9c4-fe7b-49ad-85e4-1e9be085358f",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Configure Azure Defender for servers to be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/8e86a5b6-b9bd-49d1-8e21-4bb8a0862222",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "[Preview]: Azure Kubernetes Service clusters should have Azure Defender profile enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a1840de2-8088-4ea8-b153-b4c723e9cb01",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Azure Defender for SQL should be enabled for unprotected Azure SQL servers_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/abfb4388-5bf4-4ad7-ba82-2cd2f41ceae9",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Azure Defender for SQL should be enabled for unprotected SQL Managed Instances_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/abfb7388-5bf4-4ad7-ba99-2cd2f41cebb9",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Configure Azure Defender for App Service to be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/b40e7bcd-a1e5-47fe-b9cf-2f534d0bfb7d",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Configure Azure Defender for Resource Manager to be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/b7021b2b-08fd-4dc0-9de7-3c6ece09faf9",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Configure Azure Defender for Azure SQL database to be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/b99b73e7-074b-4089-9395-b7236f094491",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "[Preview]: Azure Defender for DNS should be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/bdc59948-5574-49b3-bb91-76b7c986428d",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Azure Defender for container registries should be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/c25d9a16-bc35-4e15-a7e5-9db606bf9ed4",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Azure Defender for Resource Manager should be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/c3d20c29-b36d-48fe-808b-99a87530ad99",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Configure Azure Defender to be enabled on SQL managed instances_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/c5a62eb0-c65a-4220-8a4d-f70dd4ca95dd",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Configure Azure Defender for container registries to be enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/d3d1e68e-49d4-4b56-acff-93cef644b432",
+    "parameters": {},
+    "groupNames": [
+     "Azure Defender"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Sql/servers (v12.0) to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/05A72FA2831F9B660C2C9EAA421CC083",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Insights/components (web) to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/07BD8D21E357B9F7CA4391C2189487F1",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Devices/IotHubs to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/12DF0EA430536E3A7BB613F2EFAD7EC0",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Sql/servers (v12.0,analytics) to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/18B3B5DBEA025164AA45CD37B3BC72C7",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Web/sites (app,linux,container) to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/18F277CB394AC709CA1BDC2BD8629F45",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Network/privateEndpoints to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/2AA77B6B23F5E696FAFCD9967176E355",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Sql/servers/databases (v12.0,user) to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/2B20F5754CE54A67C45B000601B79FF5",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Storage/storageAccounts (Storage) to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/33357A14C3F088DF4D70155B6ABC27F3",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for microsoft.operationalinsights/workspaces to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/3E53E0DCC43AF174970956A623E6358A",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Logic/integrationAccounts to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/4D4AFF2849D4D46176941E355E24DE96",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Cdn/profiles/endpoints to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/54396A6942707F14408F1C5EF4911805",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Compute/virtualMachines to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/59895B4EE7386CEF5C3CD1CBF94C03BC",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.DataFactory/factories to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/5C52CBFE458CD4D4D1E5E8AAED64266E",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Synapse/workspaces to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/629E430F7F6B7C18D80CDB4ABF013C19",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.KeyVault/vaults to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/646F62950D2FC86CB224C9DE9C22B3E8",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.DataShare/accounts to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/736B7ED48E42AF42C9E8E409B05362F1",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Network/privateDnsZones to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/794A2FAD2125BD5D2976DE7FC095DA8D",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Web/serverFarms (linux) to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/7BA6741429811894D30B7F69560AE62D",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.DesktopVirtualization/workspaces to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/7ED18D643732F454A62BEFFBA48ED805",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Network/networkInterfaces to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/82B283F1C22CE03E0ED3BF024A2CE947",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Web/connections (V1) to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/85069F63AB79AB0E624C12E7CB729F2D",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.EventHub/namespaces to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/8CC85643DA23187569B18BADF5F25355",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Storage/storageAccounts (BlobStorage) to a Regional Event Hu_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/8CEF736A4826120C1C25CD0531429075",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Cdn/profiles (frontdoor) to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/90CFB370C555C9F52BFD01825F13EA3A",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Network/bastionHosts to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/940BA54D8844B54FBD2F8535119A62B9",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.RecoveryServices/vaults to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/99C792FE1BF4398643D4F8E0B05FB134",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Network/networkSecurityGroups to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/A08C4E65AC3520BF59E8CEC50B5021ED",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.MachineLearningServices/workspaces to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/A10E8F362FE549A2A2E3F707E39C1839",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Web/sites (functionapp,linux) to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/B0EB8FFBCA7D8ACB48DE43A3A1CCF869",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Sql/servers/databases (v12.0,user,datawarehouse,gen2,analyti_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/B4C3D8720D5DB65DDCDA269B5F2BAAB5",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Network/azureFirewalls to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/BA63310A9664D2D3944345C35DC04C04",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.ContainerRegistry/registries to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/BD222F4EDF08BB1E2DC94C3444B8DD70",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Compute/disks to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/BD6330DC063EAEB955735BB87A7DC954",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Synapse/workspaces/bigDataPools to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/BF5C8A6920135BDE5438C42CAF55DF16",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.ContainerService/managedClusters to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/C8586D4AF28A1CEC8539D9FCE8F59B71",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Purview/accounts to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/CB1202DEAF74A358A7AAB4C39183670F",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Storage/storageAccounts (StorageV2) to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/CB76F6D874BFEA0FBC59F76E13AABC2E",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Sql/servers/databases (v12.0,system) to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/DCF778F39F2F9F201095B20EDF4A8095",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Network/publicIPAddresses to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/DD13AD31C7D6A8416312B40E06EBEA3B",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Web/serverFarms (functionapp) to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/E0CC0DB1153DA5E2CCE75FC2900A0439",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Synapse/workspaces/sqlPools to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/E8FFF6F434BD46EC6131B6311357AFD8",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Automation/automationAccounts to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/EAF8CE5F106CB4EC81537E76A11B3C31",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Logic/workflows to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/ECC0B930582F21701E0AD23691466E55",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Cdn/CdnWebApplicationFirewallPolicies to a Regional Event Hu_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/EDC0C006A38378D3F5F8F62CFD12FEAD",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Apply Diagnostic Settings for Microsoft.Web/sites (functionapp) to a Regional Event Hub_1",
+    "policyDefinitionId": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policyDefinitions/EF0EA062ABF5A44EA8E656974074224B",
+    "parameters": {
+     "profileName": {
+      "value": "[parameters('profileName')]"
+     },
+     "eventHubName": {
+      "value": "[parameters('EventHub Name')]"
+     },
+     "eventHubRuleId": {
+      "value": "[parameters('EventHubRuleID')]"
+     },
+     "azureRegions": {
+      "value": "[parameters('Allowed Locations')]"
+     }
+    },
+    "groupNames": [
+     "Event Hub"
+    ]
+   }
+  ],
+  "policyDefinitionGroups": [
+   {
+    "name": "Azure Defender"
+   },
+   {
+    "name": "Log Analytics"
+   },
+   {
+    "name": "Event Hub"
+   }
+  ]
+ },
+ "id": "/subscriptions/122adc18-55e2-4373-9e4e-d2f804a6edc1/providers/Microsoft.Authorization/policySetDefinitions/24e472fd8b0242ae947fa07e",
+ "type": "Microsoft.Authorization/policySetDefinitions",
+ "name": "24e472fd8b0242ae947fa07e"
+}
